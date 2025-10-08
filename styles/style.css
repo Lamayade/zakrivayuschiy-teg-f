@@ -11,12 +11,35 @@
 */
 
 .page {
+  display: grid;
+  place-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-main);
   font-variation-settings: 'wght' var(--font-weight-text);
-  background-image: repeating-linear-gradient(var(--gradient--background));
+  background-image: var(--gradient-background);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+.header {
+  font-family: var(--font-accent);
+  display: grid;
+  margin-inline: auto;
+  place-items: center;
+  height: var(--block-height);
+  width: var(--block-width);
+  background-color: #fff;
+  border: 2px solid black;
+}
+
+.header__title {
+  font-size: 49px;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
 }
