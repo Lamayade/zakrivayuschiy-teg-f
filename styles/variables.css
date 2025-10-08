@@ -1,4 +1,9 @@
 :root {
     --font-main: 'Inter-Variable', sans-serif;
-    --font-accent: 'Press Start 2P', monospace;
+    --font-accent: 'PressStart2P', monospace;
+    --font-weight-header: 715;
+    --font-weight-text: 410;
+    --gradient--background-vertical: 90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 2px;
+    --gradient--background-horizontal: #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 2px;
+    --gradient--background-shadow: to bottom, #e7e7e7 0.01%, #1a1a1a 100%;
 }
