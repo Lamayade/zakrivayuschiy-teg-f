@@ -24,6 +24,7 @@
 }
 
 .header {
+  margin-block-start: 100px;
   font-family: var(--font-accent);
   display: grid;
   margin-inline: auto;
