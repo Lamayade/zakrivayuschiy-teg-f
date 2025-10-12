@@ -12,7 +12,6 @@
 
 .page {
   display: grid;
-  place-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-main);
@@ -23,24 +22,102 @@
   background-attachment: fixed;
 }
 
+.border-block {
+  width: var(--block-width);
+  border: 2px solid black;
+  background-color: #fff;
+}
+
+.border-image {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
 .header {
-  margin-block-start: 100px;
-  font-family: var(--font-accent);
   display: grid;
   margin-inline: auto;
-  place-items: center;
-  height: var(--block-height);
+  justify-items: center;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  font-family: var(--font-accent);
   width: var(--block-width);
-  background-color: #fff;
-  border: 2px solid black;
+  height: var(--block-height);
+  row-gap: 0;
 }
 
 .header__title {
   font-size: 49px;
   text-transform: uppercase;
+  align-self: end;
 }
 
 .header__subtitle {
+  margin-block-start: 20px;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+.main {
+  margin-block-start: 200px;
+}
+
+
+.article {
+  margin-block-start: 40px;
+  margin-block-end: 50px;
+  margin-inline: auto;
+}
+
+.article__header {
+  font-variation-settings: 'wght' var(--font-weight-header);
+  font-size: 18px;
+  margin-inline: 10px;
+  margin-block: 5px;
+}
+
+.article__label-container {
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-text);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.article__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  text-stroke: 0.1px var(--color-shadow);
+  text-shadow: 1px 1px var(--color-shadow),
+               -1px -1px var(--color-shadow),
+               1px -1px var(--color-shadow),
+               -1px 1px var(--color-shadow);
+  text-transform: uppercase;
+}
+
+@supports (-webkit-text-stroke: 0.1px var(--color-shadow)) {
+  .article__label {
+    -webkit-text-stroke: 0.1px var(--color-shadow);
+  }
+}
+
+.article__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+.article__text {
+  margin: 25px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.article__text:not(:first-of-type) {
+  margin-block-start: 0;
 }
