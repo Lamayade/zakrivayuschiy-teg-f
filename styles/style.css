@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -24,8 +23,8 @@
 
 .border-block {
   width: var(--block-width);
-  border: 2px solid black;
-  background-color: #fff;
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-background);
 }
 
 .border-image {
@@ -71,8 +70,9 @@
 .article__header {
   font-variation-settings: 'wght' var(--font-weight-header);
   font-size: 18px;
+  line-height: 125%;
   margin-inline: 10px;
-  margin-block: 4px;
+  margin-block: 5px;
 }
 
 .article__label-container {
@@ -100,14 +100,14 @@
 
 @supports (-webkit-text-stroke: 1px var(--color-label-shadow)) {
   .article__label {
-    -webkit-text-stroke: 1px var(--color-label-shadow);
     text-shadow: none;
+    -webkit-text-stroke: 1px var(--color-label-shadow);
   }
 }
 
 .article__image {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: right;
 }
@@ -125,7 +125,8 @@
 .button {
   display: block;
   position: relative;
-  background: none;
+  overflow: hidden;
+  background: var(--color-background);
   margin-inline-start: auto;
   margin-inline-end: 25px;
   margin-block-end: 25px;
@@ -134,7 +135,6 @@
   border: 2px solid var(--color-accent);
   font-family: var(--font-accent);
   font-size: 14px;
-  color: inherit;
   cursor: pointer;
 }
 
@@ -146,4 +146,32 @@
   outline: none;
   box-shadow: 2px 2px 0 0 var(--color-accent);
   transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--color-accent);
+  transform: translate(-100%, -20%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover {
+  color: var(--color-background);
+}
+
+.button:hover::before {
+  transform: translate(0, 0);
+}
+
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: var(--color-background);
 }
