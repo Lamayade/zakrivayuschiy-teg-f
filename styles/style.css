@@ -123,10 +123,14 @@
 }
 
 .button {
-  display: block;
-  position: relative;
+  display: inline-block;
   overflow: hidden;
   background: var(--color-background);
+  cursor: pointer;
+}
+
+.card__like-button {
+  position: relative;
   margin-inline-start: auto;
   margin-inline-end: 25px;
   margin-block-end: 25px;
@@ -135,20 +139,16 @@
   border: 2px solid var(--color-accent);
   font-family: var(--font-accent);
   font-size: 14px;
-  cursor: pointer;
+  
 }
 
-.button:hover {
-  cursor: pointer;
-}
-
-.button:focus {
+.card__like-button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--color-accent);
   transition: box-shadow 0.3s ease;
 }
 
-.button::before {
+.card__like-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -160,11 +160,11 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.button:hover {
+.card__like-button:hover {
   color: var(--color-background);
 }
 
-.button:hover::before {
+.card__like-button:hover::before {
   transform: translate(0, 0);
 }
 
@@ -175,3 +175,19 @@
   mix-blend-mode: difference;
   color: var(--color-background);
 }
+
+.sparks {
+  fill: transparent;
+}
+
+.card__icon-button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--color-accent);
+  border-radius: 0;
+} 
