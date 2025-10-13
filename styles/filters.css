@@ -1,0 +1,7 @@
+.more-bright {
+    filter: brightness(180%);
+}
+
+.less-opaque {
+    filter: opacity(60%);
+}
