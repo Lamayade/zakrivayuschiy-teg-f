@@ -72,7 +72,7 @@
   font-variation-settings: 'wght' var(--font-weight-header);
   font-size: 18px;
   margin-inline: 10px;
-  margin-block: 5px;
+  margin-block: 4px;
 }
 
 .article__label-container {
@@ -89,19 +89,19 @@
   right: 25px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  font-family: var(--accent-font), fantasy;
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
-  text-stroke: 0.1px var(--color-shadow);
-  text-shadow: 1px 1px var(--color-shadow),
-               -1px -1px var(--color-shadow),
-               1px -1px var(--color-shadow),
-               -1px 1px var(--color-shadow);
+  text-shadow: 1px 1px var(--color-label-shadow),
+               -1px -1px var(--color-label-shadow),
+               1px -1px var(--color-label-shadow),
+               -1px 1px var(--color-label-shadow);
   text-transform: uppercase;
 }
 
-@supports (-webkit-text-stroke: 0.1px var(--color-shadow)) {
+@supports (-webkit-text-stroke: 1px var(--color-label-shadow)) {
   .article__label {
-    -webkit-text-stroke: 0.1px var(--color-shadow);
+    -webkit-text-stroke: 1px var(--color-label-shadow);
+    text-shadow: none;
   }
 }
 
@@ -120,4 +120,30 @@
 
 .article__text:not(:first-of-type) {
   margin-block-start: 0;
+}
+
+.button {
+  display: block;
+  position: relative;
+  background: none;
+  margin-inline-start: auto;
+  margin-inline-end: 25px;
+  margin-block-end: 25px;
+  padding-inline: 35px;
+  padding-block: 10px;
+  border: 2px solid var(--color-accent);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--color-accent);
+  transition: box-shadow 0.3s ease;
 }

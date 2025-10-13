@@ -10,4 +10,5 @@
     --block-width: clamp(375px, 48.6%, 700px);
     --block-height: clamp(327px, 48.6%, 960px);
     --color-shadow: #fff;
+    --color-accent: #000;
 }
