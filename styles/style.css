@@ -218,16 +218,20 @@
   margin-block-end: 100px;
 }
 
+
+
+
 .dialog {
   inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
+  padding-block: 30px;
+  padding-inline: 40px;
 }
 
 .dialog__content {
   display: flex;
   justify-self: center;
   align-items: center;
-  padding-block: 30px;
-  padding-inline: 40px;
+  
   gap: 12px;
   font-family: var(--font-accent);
 }
