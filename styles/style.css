@@ -129,8 +129,6 @@
   padding-inline: 35px;
   padding-block: 10px;
   border: 2px solid var(--color-accent);
-  font-family: var(--font-accent);
-  
 }
 
 .button:focus {
@@ -176,7 +174,7 @@
 .card__icon-button:focus-visible {
   outline: none;
   border: 2px solid var(--color-accent);
-  border-radius: 0; 
+  border-radius: 0;
   appearance: none;
 }
 
