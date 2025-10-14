@@ -6,7 +6,6 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
 
 .page {
@@ -22,7 +21,6 @@
 }
 
 .border-block {
-  width: var(--block-width);
   border: 2px solid var(--color-accent);
   background-color: var(--color-background);
 }
@@ -36,35 +34,28 @@
   display: grid;
   margin-inline: auto;
   justify-items: center;
-  margin-block-start: 100px;
-  margin-block-end: 100px;
+  margin-block: 100px;
   font-family: var(--font-accent);
-  width: var(--block-width);
-  height: var(--block-height);
-  row-gap: 0;
+  width: var(--width-header-block);
+  height: var(--height-header-block);
 }
 
 .header__title {
-  font-size: 49px;
+  font-size: var(--font-size-header-title);
   text-transform: uppercase;
   align-self: end;
 }
 
 .header__subtitle {
   margin-block-start: 20px;
-  font-size: 14px;
+  font-size: var(--font-size-header-subtitle);
   text-transform: uppercase;
 }
 
-.main {
-  margin-block-start: 200px;
-}
-
-
 .article {
-  margin-block-start: 40px;
-  margin-block-end: 50px;
+  margin-block-end: 49px;
   margin-inline: auto;
+  width: var(--width-article-block);
 }
 
 .article__header {
@@ -72,21 +63,18 @@
   font-size: 18px;
   line-height: 125%;
   margin-inline: 10px;
-  margin-block-start: 5px;
-  margin-block-end: 3px;
+  margin-block: 4px;
 }
 
 .article__label-container {
   font-family: var(--font-accent);
   font-weight: var(--font-weight-text);
-  width: 100%;
-  aspect-ratio: 1 / 1;
   position: relative;
 }
 
 .article__label {
   position: absolute;
-  top: 26px;
+  top: 25px;
   right: 25px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
@@ -107,11 +95,11 @@
 }
 
 .article__image {
+  display: block;
   inline-size: 100%;
-  block-size: 101%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: right;
-
 }
 
 .article__text {
@@ -131,17 +119,13 @@
 }
 
 .button {
-  display: inline-block;
+  display: block;
+  position: relative;
   overflow: hidden;
   background: var(--color-background);
   font-family: var(--font-accent);
   cursor: pointer;
   font-size: 14px;
-}
-
-.card__like-button {
-  display: block;
-  position: relative;
   padding-inline: 35px;
   padding-block: 10px;
   border: 2px solid var(--color-accent);
@@ -149,13 +133,13 @@
   
 }
 
-.card__like-button:focus {
+.button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--color-accent);
   transition: box-shadow 0.3s ease;
 }
 
-.card__like-button::before {
+.button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -163,16 +147,16 @@
   inline-size: 100%;
   block-size: 100%;
   background-color: var(--color-accent);
-  transform: translate(-100%, -20%);
+  transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:hover {
+.button:hover {
   color: var(--color-background);
 }
 
-.card__like-button:hover::before {
-  transform: translate(0, 0);
+.button:hover::before {
+  transform: translateX(0);
 }
 
 .button__text {
@@ -201,15 +185,17 @@
 }
 
 .floppy {
-  inline-size: 28px;
-  block-size: 28px;
-  color: #000;
-
+  inline-size: 21px;
+  block-size: 21px;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: var(--color-background);
 }
 
 .button__save {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-self: center;
   align-items: center;
   gap: 6px;
@@ -218,30 +204,49 @@
   margin-block-end: 100px;
 }
 
-
-
-
-.dialog {
-  inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
-  padding-block: 30px;
-  padding-inline: 40px;
+.dialog:open {
+  display: grid;
+  gap: 26px;
+  inline-size: clamp(341px, 336.775px + 1.127vw, 353px);
+  block-size: 191px;
 }
 
 .dialog__content {
-  display: flex;
-  justify-self: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  
-  gap: 12px;
+  gap: 20px;
   font-family: var(--font-accent);
+  padding-inline: 20px;
+  padding-block-start: 10px;
+}
+
+.dialog__content .floppy {
+  inline-size: 40px;
+  block-size: 40px;
+}
+
+.dialog__text {
+  display: grid;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 .button__dialog {
-  display: flex;
-  justify-self: center;
+  block-size: 38px;
+  inline-size: clamp(261px, 249.732px + 3.005vw, 293px);
+  margin-inline: auto;
+}
 
 
-  padding-block: 16px;
+@media (max-width: 376px) {
+  .floppy {
+    inline-size: 28px;
+    block-size: 28px;
+  }
 
-
+  .button__save {
+    flex-direction: column;
+  }
 }
