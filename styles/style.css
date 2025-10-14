@@ -27,7 +27,7 @@
   background-color: var(--color-background);
 }
 
-.border-image {
+.border-horizontal {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
@@ -72,7 +72,8 @@
   font-size: 18px;
   line-height: 125%;
   margin-inline: 10px;
-  margin-block: 5px;
+  margin-block-start: 5px;
+  margin-block-end: 3px;
 }
 
 .article__label-container {
@@ -85,7 +86,7 @@
 
 .article__label {
   position: absolute;
-  top: 25px;
+  top: 26px;
   right: 25px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
@@ -107,9 +108,10 @@
 
 .article__image {
   inline-size: 100%;
-  block-size: 100%;
+  block-size: 101%;
   object-fit: cover;
   object-position: right;
+
 }
 
 .article__text {
