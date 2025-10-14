@@ -120,10 +120,6 @@
   line-height: 21px;
 }
 
-.article__text:not(:first-of-type) {
-  margin-block-start: 0;
-}
-
 .card__button {
   display: flex;
   align-items: center;
@@ -138,7 +134,9 @@
   display: inline-block;
   overflow: hidden;
   background: var(--color-background);
+  font-family: var(--font-accent);
   cursor: pointer;
+  font-size: 14px;
 }
 
 .card__like-button {
@@ -148,7 +146,6 @@
   padding-block: 10px;
   border: 2px solid var(--color-accent);
   font-family: var(--font-accent);
-  font-size: 14px;
   
 }
 
@@ -201,4 +198,46 @@
 
 .like-icon {
   display: block;
+}
+
+.floppy {
+  inline-size: 28px;
+  block-size: 28px;
+  color: #000;
+
+}
+
+.button__save {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 6px;
+  padding-block: 16px;
+  padding-inline: 18px;
+  margin-block-end: 100px;
+}
+
+.dialog {
+  inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
+}
+
+.dialog__content {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  padding-block: 30px;
+  padding-inline: 40px;
+  gap: 12px;
+  font-family: var(--font-accent);
+}
+
+.button__dialog {
+  display: flex;
+  justify-self: center;
+
+
+  padding-block: 16px;
+
+
 }
