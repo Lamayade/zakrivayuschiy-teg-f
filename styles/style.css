@@ -34,10 +34,11 @@
   display: grid;
   margin-inline: auto;
   justify-items: center;
-  margin-block: 100px;
+  margin-block-start: 100px;
+  margin-block-end: var(--margin-block-end-header);
+  padding-block: var(--padding-block-header);
   font-family: var(--font-accent);
-  width: var(--width-header-block);
-  height: var(--height-header-block);
+  width: var(--width-header);
 }
 
 .header__title {
@@ -55,7 +56,7 @@
 .article {
   margin-block-end: 49px;
   margin-inline: auto;
-  width: var(--width-article-block);
+  width: var(--width-article);
 }
 
 .article__header {
@@ -129,12 +130,12 @@
   padding-block: 10px;
   min-width: 130px;
   border: 2px solid var(--color-accent);
+  transition: box-shadow 0.3s ease;
 }
 
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--color-accent);
-  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -149,10 +150,6 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.button:hover {
-  color: var(--color-background);
-}
-
 .button:hover::before {
   transform: translateX(0);
 }
@@ -165,10 +162,11 @@
 }
 
 .card__icon-button {
-  border: none;
   padding: 0;
   margin: 0;
   background: none;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -199,6 +197,7 @@
   gap: 6px;
   padding-block: 16px;
   padding-inline: 18px;
+  margin-block-start: 52px;
   margin-block-end: 100px;
 }
 

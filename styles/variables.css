@@ -9,9 +9,10 @@
       repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
       repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
       linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
-    --width-header-block: clamp(375px, 260.211px + 30.61vw, 700px);
-    --height-header-block: clamp(327px, 312.563px + 3.85vw, 368px);
-    --width-article-block: var(--width-header-block);
+    --width-header: clamp(375px, 260.211px + 30.61vw, 700px);
+    --padding-block-header: clamp(120px, 116.479px + 0.939vw, 130px);
+    --margin-block-end-header: clamp(95px, 101.761px - 0.469vw, 100px);
+    --width-article: var(--width-header);
     --color-label-shadow: #fff;
     --color-accent: #000;
     --color-background: #fff;
