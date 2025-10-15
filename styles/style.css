@@ -126,8 +126,8 @@
   font-family: var(--font-accent);
   cursor: pointer;
   font-size: 14px;
-  padding-inline: 35px;
   padding-block: 10px;
+  min-width: 130px;
   border: 2px solid var(--color-accent);
 }
 
@@ -208,6 +208,10 @@
   inline-size: clamp(341px, 336.775px + 1.127vw, 353px);
   block-size: 191px;
 }
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 75%);
+} 
 
 .dialog__content {
   display: grid;
