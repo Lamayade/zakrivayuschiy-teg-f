@@ -205,7 +205,7 @@
   display: grid;
   gap: 26px;
   inline-size: clamp(341px, 336.775px + 1.127vw, 353px);
-  block-size: 191px;
+  padding-block: 25px;
 }
 
 .dialog::backdrop {
